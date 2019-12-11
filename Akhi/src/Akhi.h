@@ -1,8 +1,8 @@
 #pragma once
 
 // Used by Akhi Applications
-
-#include <stdio.h>
 #include "Akhi/Application.h"
+#include "Akhi/Log.h"
 
+// Entry Point
 #include "Akhi/EntryPoint.h"

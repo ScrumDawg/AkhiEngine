@@ -6,7 +6,10 @@ extern Akhi::Application* Akhi::CreateApplication();
 
 int main(int argc, char** argv)
 {
-	printf("Game App started!");
+	Akhi::Log::Init();
+	AKHI_CORE_WARN("Initialized Log!");
+	AKHI_INFO("Hi!");
+
 	auto app = Akhi::CreateApplication();
 	app->Run();
 	delete app;

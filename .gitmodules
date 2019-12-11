@@ -1,0 +1,3 @@
+[submodule "Akhi/vendor/spdlog"]
+	path = Akhi/vendor/spdlog
+	url = https://github.com/gabime/spdlog
