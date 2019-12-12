@@ -1,5 +1,6 @@
 workspace "Akhi"
 	architecture "x64"
+	startproject "Sandbox"
 
 	configurations
 	{
@@ -10,6 +11,11 @@ workspace "Akhi"
 	
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+IncludeDir = {}
+IncludeDir["GLFW"] = "Akhi/vendor/GLFW/include"
+
+include "Akhi/vendor/GLFW"
+
 project "Akhi"
 	location "Akhi"
 	kind "SharedLib"
@@ -17,6 +23,9 @@ project "Akhi"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+
+	pchheader "akhipch.h"
+	pchsource "Akhi/src/akhipch.cpp"
 
 	files
 	{
@@ -26,13 +35,21 @@ project "Akhi"
 
 	includedirs
 	{
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/src",
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"
 		cppdialect "C++17"
 		staticruntime "On"
-		systemversion "10.0.17134.0"
+		systemversion "latest"
 
 		defines
 		{
@@ -87,7 +104,7 @@ project "Sandbox"
 	filter "system:windows"
 		cppdialect "C++17"
 		staticruntime "On"
-		systemversion "10.0.17134.0"
+		systemversion "latest"
 
 		defines
 		{

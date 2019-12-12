@@ -4,6 +4,9 @@
     <Filter Include="Akhi">
       <UniqueIdentifier>{2289827C-0EC0-830D-B7AC-6910A3C2FF0E}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Akhi\Events">
+      <UniqueIdentifier>{C65A627D-3210-DB72-BB04-D54927B9D176}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Akhi.h" />
@@ -16,7 +19,24 @@
     <ClInclude Include="src\Akhi\EntryPoint.h">
       <Filter>Akhi</Filter>
     </ClInclude>
+    <ClInclude Include="src\Akhi\Events\ApplicationEvent.h">
+      <Filter>Akhi\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Akhi\Events\Event.h">
+      <Filter>Akhi\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Akhi\Events\KeyEvent.h">
+      <Filter>Akhi\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Akhi\Events\MouseEvent.h">
+      <Filter>Akhi\Events</Filter>
+    </ClInclude>
     <ClInclude Include="src\Akhi\Log.h">
+      <Filter>Akhi</Filter>
+    </ClInclude>
+    <ClInclude Include="src\akhipch.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
+    <ClInclude Include="src\Akhi\Window.h">
       <Filter>Akhi</Filter>
     </ClInclude>
   </ItemGroup>
@@ -27,5 +47,7 @@
     <ClCompile Include="src\Akhi\Log.cpp">
       <Filter>Akhi</Filter>
     </ClCompile>
+    <ClCompile Include="src\akhipch.cpp" />
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
   </ItemGroup>
 </Project>
